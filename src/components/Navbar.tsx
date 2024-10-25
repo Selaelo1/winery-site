@@ -1,15 +1,41 @@
-import { useState } from "react";
+import { useState, useEffect } from "react";
 import { Wine, Menu } from "lucide-react";
 
 export default function Navbar() {
   const [isOpen, setIsOpen] = useState(false);
+  const [lastScrollY, setLastScrollY] = useState(0);
+  const [showNavbar, setShowNavbar] = useState(true);
 
   const handleToggle = () => {
     setIsOpen((prev) => !prev);
   };
 
+  // eslint-disable-next-line react-hooks/exhaustive-deps
+  const handleScroll = () => {
+    const currentScrollY = window.scrollY;
+
+    if (currentScrollY > lastScrollY) {
+      setShowNavbar(false); // Scrolling down
+    } else {
+      setShowNavbar(true); // Scrolling up
+    }
+
+    setLastScrollY(currentScrollY);
+  };
+
+  useEffect(() => {
+    window.addEventListener("scroll", handleScroll);
+    return () => {
+      window.removeEventListener("scroll", handleScroll);
+    };
+  }, [handleScroll, lastScrollY]);
+
   return (
-    <nav className="bg-black/95 text-gray-200 fixed w-full z-50 shadow-lg">
+    <nav
+      className={`bg-black/95 text-gray-200 fixed w-full z-50 shadow-lg transition-transform duration-300 ${
+        showNavbar ? "translate-y-0" : "-translate-y-full"
+      }`}
+    >
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
         <div className="flex items-center justify-between h-16">
           <div className="flex items-center space-x-2">
@@ -61,7 +87,7 @@ export default function Navbar() {
       </div>
 
       {isOpen && (
-        <div className="md:hidden bg-black/90">
+        <div className="md:hidden bg-black/90 transition-opacity duration-300">
           <ul className="flex flex-col p-4 border-t border-gray-500">
             <li>
               <a
