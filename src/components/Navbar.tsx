@@ -1,5 +1,4 @@
-// eslint-disable-next-line @typescript-eslint/no-unused-vars
-import { Wine, Calendar, Menu } from "lucide-react";
+import { Wine, Menu } from "lucide-react";
 
 export default function Navbar() {
   return (
