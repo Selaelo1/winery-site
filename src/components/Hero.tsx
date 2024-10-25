@@ -1,5 +1,3 @@
-import React from "react";
-
 export default function Hero() {
   const scrollToWines = () => {
     const winesSection = document.getElementById("wines");
