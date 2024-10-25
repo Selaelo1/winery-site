@@ -57,7 +57,7 @@ export default function Wines() {
       description: "A harmonious blend of Cabernet and Merlot",
       price: "R520",
       image:
-        "https://images.unsplash.com/photo-1586370434639-0fe43b2d32d6?ixlib=rb-1.2.1&auto=format&fit=crop&w=800&q=80",
+        "https://images.unsplash.com/photo-1547595628-c61a29f496f0?q=80&w=1887&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D",
       history:
         "Our Signature Blend represents the pinnacle of our winemaking philosophy. Each vintage is carefully crafted to showcase the best characteristics of our estate-grown Cabernet Sauvignon and Merlot.",
       awards: [
