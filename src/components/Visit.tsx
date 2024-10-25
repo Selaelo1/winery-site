@@ -1,4 +1,4 @@
-import React, { useState } from "react";
+import { useState } from "react";
 import BookingModal from "./BookingModal";
 
 export default function Visit() {
