@@ -14,11 +14,6 @@ function App() {
       <Wines />
       <Visit />
       <Footer />
-      <footer className="bg-black text-gray-400 py-6 text-center">
-        <p>
-          © {new Date().getFullYear()} Lefokeni Winery. All rights reserved.
-        </p>
-      </footer>
     </div>
   );
 }
