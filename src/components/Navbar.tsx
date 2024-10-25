@@ -1,5 +1,5 @@
 import { useState, useEffect } from "react";
-import { Wine, Menu } from "lucide-react";
+import { Wine, Menu, X } from "lucide-react"; // Import X icon
 
 export default function Navbar() {
   const [isOpen, setIsOpen] = useState(false);
@@ -10,7 +10,6 @@ export default function Navbar() {
     setIsOpen((prev) => !prev);
   };
 
-  // eslint-disable-next-line react-hooks/exhaustive-deps
   const handleScroll = () => {
     const currentScrollY = window.scrollY;
 
@@ -28,7 +27,7 @@ export default function Navbar() {
     return () => {
       window.removeEventListener("scroll", handleScroll);
     };
-  }, [handleScroll, lastScrollY]);
+  }, [lastScrollY]);
 
   return (
     <nav
@@ -80,7 +79,11 @@ export default function Navbar() {
           </div>
           <div className="md:hidden">
             <button onClick={handleToggle} aria-label="Toggle menu">
-              <Menu className="h-6 w-6" />
+              {isOpen ? (
+                <X className="h-6 w-6" />
+              ) : (
+                <Menu className="h-6 w-6" />
+              )}
             </button>
           </div>
         </div>
