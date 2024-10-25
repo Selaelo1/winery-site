@@ -1,4 +1,3 @@
-import React from "react";
 import { GlassWater, GamepadIcon, Users } from "lucide-react";
 
 export default function Experiences() {
@@ -8,18 +7,24 @@ export default function Experiences() {
       title: "Wine Tasting",
       description:
         "Indulge in our curated selection of premium wines while our sommeliers guide you through each unique flavor profile.",
+      image:
+        "https://images.unsplash.com/photo-1528823872057-9c018a7a7553?ixlib=rb-1.2.1&auto=format&fit=crop&w=800&q=80",
     },
     {
       icon: <GamepadIcon className="h-8 w-8 text-[#B8860B]" />,
       title: "Game Night",
       description:
         "Join us for an evening of sophisticated entertainment, featuring classic board games and wine pairings.",
+      image:
+        "https://images.unsplash.com/photo-1543269664-76bc3997d9ea?ixlib=rb-1.2.1&auto=format&fit=crop&w=800&q=80",
     },
     {
       icon: <Users className="h-8 w-8 text-[#B8860B]" />,
       title: "Private Events",
       description:
         "Host your special occasions in our elegant venue with customized wine experiences and catering options.",
+      image:
+        "https://images.unsplash.com/photo-1519671482749-fd09be7ccebf?ixlib=rb-1.2.1&auto=format&fit=crop&w=800&q=80",
     },
   ];
 
@@ -33,11 +38,26 @@ export default function Experiences() {
           {experiences.map((exp, index) => (
             <div
               key={index}
-              className="bg-white p-6 rounded-lg shadow-md hover:shadow-xl transition-shadow"
+              className="bg-white rounded-lg shadow-md hover:shadow-xl transition-shadow overflow-hidden"
             >
-              <div className="mb-4">{exp.icon}</div>
-              <h3 className="text-xl font-semibold mb-2">{exp.title}</h3>
-              <p className="text-gray-600">{exp.description}</p>
+              <div className="relative h-48">
+                <img
+                  src={exp.image}
+                  alt={exp.title}
+                  className="w-full h-full object-cover"
+                />
+                <div className="absolute inset-0 bg-gradient-to-t from-black/60 to-transparent" />
+              </div>
+              <div className="p-6">
+                <div className="flex items-center gap-3 mb-4">
+                  {exp.icon}
+                  <h3 className="text-xl font-semibold">{exp.title}</h3>
+                </div>
+                <p className="text-gray-600 mb-4">{exp.description}</p>
+                <button className="bg-[#B8860B] text-white px-6 py-2 rounded hover:bg-[#8B6914] transition-colors w-full">
+                  Book Now
+                </button>
+              </div>
             </div>
           ))}
         </div>
