@@ -102,12 +102,6 @@ export default function Wines() {
   const handleCheckout = async () => {
     setIsProcessingPayment(true);
     try {
-      // eslint-disable-next-line @typescript-eslint/no-unused-vars
-      const total = cartItems.reduce((sum, item) => {
-        const price = parseFloat(item.price.replace("R", ""));
-        return sum + price * item.quantity;
-      }, 0);
-
       await new Promise((resolve) => setTimeout(resolve, 1500));
 
       window.location.href = `https://secure.paygate.co.za/payweb3/process.trans?PAY_REQUEST_ID=${Date.now()}&CHECKSUM=dummy`;
