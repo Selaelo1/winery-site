@@ -1,4 +1,11 @@
+import React from "react";
+
 export default function Hero() {
+  const scrollToWines = () => {
+    const winesSection = document.getElementById("wines");
+    winesSection?.scrollIntoView({ behavior: "smooth" });
+  };
+
   return (
     <div id="home" className="relative h-screen">
       <div
@@ -18,7 +25,10 @@ export default function Hero() {
           <p className="text-xl text-gray-300 mb-8">
             South Africa's Premier Wine Estate
           </p>
-          <button className="bg-[#B8860B] text-white px-8 py-3 rounded hover:bg-[#8B6914] transition-colors">
+          <button
+            onClick={scrollToWines}
+            className="bg-[#800000] text-white px-8 py-3 rounded hover:bg-[#600000] transition-colors"
+          >
             Explore Our Collection
           </button>
         </div>
