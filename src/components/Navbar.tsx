@@ -21,25 +21,48 @@ export default function Navbar() {
               isOpen ? "block" : "hidden"
             }`}
           >
-            <a href="#home" className="hover:text-[#B8860B] transition-colors">
-              {" "}
-              Home{" "}
-            </a>
-            <a
-              href="#experiences"
-              className="hover:text-[#B8860B] transition-colors"
+            <ul
+              className={`md:flex md:flex-row md:space-x-8 flex flex-col p-4 pt-0 mt-4 border-t border-gray-500 ${
+                isOpen ? "block" : "hidden"
+              }`}
             >
-              {" "}
-              Experiences{" "}
-            </a>
-            <a href="#wines" className="hover:text-[#B8860B] transition-colors">
-              {" "}
-              Our Wines{" "}
-            </a>
-            <a href="#visit" className="hover:text-[#B8860B] transition-colors">
-              {" "}
-              Visit Us{" "}
-            </a>
+              <li>
+                <a
+                  href="#home"
+                  className="hover:text-[#B8860B] transition-colors"
+                >
+                  {" "}
+                  Home{" "}
+                </a>
+              </li>
+              <li>
+                <a
+                  href="#experiences"
+                  className="hover:text-[#B8860B] transition-colors"
+                >
+                  {" "}
+                  Experiences{" "}
+                </a>
+              </li>
+              <li>
+                <a
+                  href="#wines"
+                  className="hover:text-[#B8860B] transition-colors"
+                >
+                  {" "}
+                  Our Wines{" "}
+                </a>
+              </li>
+              <li>
+                <a
+                  href="#visit"
+                  className="hover:text-[#B8860B] transition-colors"
+                >
+                  {" "}
+                  Visit Us{" "}
+                </a>
+              </li>
+            </ul>
           </div>
           <div className="md:hidden">
             <Menu className="h-6 w-6" onClick={handleToggle} />
