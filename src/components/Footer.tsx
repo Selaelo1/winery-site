@@ -1,4 +1,3 @@
-import React from "react";
 import { Wine, Mail, Phone, Instagram } from "lucide-react";
 
 const Footer = () => {
