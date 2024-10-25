@@ -32,7 +32,7 @@ export default function Visit() {
               </div>
               <button
                 onClick={() => setIsModalOpen(true)}
-                className="bg-[#B8860B] text-white px-6 py-2 rounded hover:bg-[#8B6914] transition-colors"
+                className="bg-[#800000] text-white px-6 py-2 rounded hover:bg-[#600000] transition-colors"
               >
                 Book a Visit
               </button>
