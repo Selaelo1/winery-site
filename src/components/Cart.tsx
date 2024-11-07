@@ -1,5 +1,5 @@
 /* eslint-disable @typescript-eslint/no-unused-vars */
-import React, { useState } from "react";
+import { useState } from "react";
 import { ShoppingCart, X, Truck, Store, Wallet } from "lucide-react";
 import DeliveryForm from "./DeliveryForm";
 
