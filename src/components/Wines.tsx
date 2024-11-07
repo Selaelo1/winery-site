@@ -8,7 +8,7 @@ export default function Wines() {
   const [selectedWine, setSelectedWine] = useState<Wine | null>(null);
   const [isCartOpen, setIsCartOpen] = useState(false);
   const [cartItems, setCartItems] = useState<CartItem[]>([]);
-  const [isProcessingPayment, setIsProcessingPayment] = useState(false);
+  const [isProcessingPayment] = useState(false);
 
   const wines: Wine[] = [
     {
@@ -99,20 +99,6 @@ export default function Wines() {
     setCartItems((prevItems) => prevItems.filter((item) => item.name !== name));
   };
 
-  const handleCheckout = async () => {
-    setIsProcessingPayment(true);
-    try {
-      await new Promise((resolve) => setTimeout(resolve, 1500));
-
-      window.location.href = `https://secure.paygate.co.za/payweb3/process.trans?PAY_REQUEST_ID=${Date.now()}&CHECKSUM=dummy`;
-      // eslint-disable-next-line @typescript-eslint/no-unused-vars
-    } catch (error) {
-      alert("Payment processing failed. Please try again.");
-    } finally {
-      setIsProcessingPayment(false);
-    }
-  };
-
   return (
     <section id="wines" className="py-20 bg-[#1A1A1A] text-gray-200">
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
@@ -183,7 +169,6 @@ export default function Wines() {
         items={cartItems}
         onUpdateQuantity={updateQuantity}
         onRemoveItem={removeItem}
-        onCheckout={handleCheckout}
         isProcessingPayment={isProcessingPayment}
       />
     </section>
